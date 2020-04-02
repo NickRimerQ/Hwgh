@@ -13,4 +13,33 @@ public:
 		}
 		return result;
 	}
+
+	void add() {
+		for (int i = 0; i < 9; i++) {
+			arr[i] = i;
+		}
+	}
+
+	void print() {
+		for (int i = 0; i < 9; i++) {
+			if (i == 3 || i == 6) {
+				cout << endl;
+			}
+			cout << " " << arr[i];
+		}
+		cout << endl << " " << endl;
+	}
 };
+
+int main() {
+	Matrix a = Matrix(), b = Matrix(), c = Matrix();
+	
+	a.add();
+	b.add();
+
+	c = a + b;
+	c.print();
+
+	getchar();
+	return 0;
+}
