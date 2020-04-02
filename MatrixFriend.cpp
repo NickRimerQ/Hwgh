@@ -25,6 +25,14 @@ public:
 		return result;
 	}
 
+	friend Matrix operator*(Matrix const& a, int const& b) {
+		Matrix result = Matrix();
+		for (int i = 0; i < 9; i++) {
+			result.arr[i] = a.arr[i] * b;
+		}
+		return result;
+	}
+
 	void add() {
 		for (int i = 0; i < 9; i++) {
 			arr[i] = i;
@@ -52,6 +60,9 @@ int main() {
 	c.print();
 
 	c = a * b;
+	c.print();
+
+	c = a * 3;
 	c.print();
 
 	getchar();
